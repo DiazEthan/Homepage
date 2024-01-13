@@ -1,0 +1,51 @@
+
+
+
+
+
+
+
+
+
+/* Structural Styles */
+
+html {
+	background-color: Black;
+}
+
+Body {
+	background-color: White;
+}
+
+Header {
+	background-color: Gray;
+}
+
+P {
+	color: White;
+	background-color: black;
+	text-align: center;
+}
+
+nav {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+nav {
+	display: table;
+	width: 100%;
+}
+
+nav > ul {
+	display: table-row;
+}
+
+nav > ul > li {
+	display: table-cell;
+	text-align: center;
+}
+
+nav > ul > li > a {
+	display: block;
+}
