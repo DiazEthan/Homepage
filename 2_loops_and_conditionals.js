@@ -4,12 +4,10 @@
 var number = prompt("Pick a number?");
 
 let sum = number;
-let i = 1;
-
-while (i <=5) {
-	sum += i;
-	i++;
-	console.log(sum);
+for ( let i = 1; i <= 5; i++ ) {
+    sum += i;
 }
-if 
 
+
+
+console.log(number);
