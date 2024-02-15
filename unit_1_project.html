@@ -1,0 +1,86 @@
+<html id="html">
+    
+<head>
+<meta charset="utf-8" />
+<link href="unit_1_project.css" rel="stylesheet" />
+<script src="unit_1_project.js"></script>
+</head>
+
+<div id="div">
+    <p> Hello, welcome to your Saving acount calulator, to begin please press the Button to show you how much money you would make with keeping your money in our saving acount </p>
+    
+    </div>
+
+    <button id ="button">Calulate your money</button>
+
+
+
+<script> var number = prompt("Pick a number from 1-10, you picking the number with change the color of our webpage")
+
+if ( number == 1 ) {
+    htmlColor.style.backgroundColor = "#0000ff";
+} else if ( number == 2 ) {
+    htmlColor.style.backgroundColor = "#ff0000";
+}else if ( number == 3 ) {
+    htmlColor.style.backgroundColor = "#ffa500";
+}else if ( number == 4 ) {
+    htmlColor.style.backgroundColor = "#008000";
+}else if ( number == 5 ) {
+    htmlColor.style.backgroundColor = "#800080";
+}else if ( number == 6 ) {
+    htmlColor.style.backgroundColor = "#000000";
+}else if ( number == 7 ) {
+    htmlColor.style.backgroundColor = "#8e3a59";
+}else if ( number == 8 ) {
+    htmlColor.style.backgroundColor = "#d2691e";
+}else if ( number == 9 ) {
+    htmlColor.style.backgroundColor = "#808080";
+}else if ( number == 10 ) {
+    htmlColor.style.backgroundColor = "#f8f8ff";
+}else if ( number > 10 ) {
+    alert ("Number is over 10, Try again");
+}else if ( number < 1 ) {
+    alert ("Number is under 1, Try again");
+}
+ 
+</script>
+
+
+
+<script> document.getElementById("button").addEventListener("click", Calulater);
+
+
+    function Calulater() {
+    var balance = prompt("Enter how much money you you want to start with");
+    var month = prompt("Enter how much month you want to keep it in the bank");
+    var divElement = document.getElementById("div");
+
+    var month
+    var balance;
+    var total;
+    const interestRate = 0.03;
+    let i = 1;
+    while (i <= month) {
+    balance =+ balance + (interestRate * balance);
+    divElement.innerHTML +="End of Month " + i + " :  " + balance.toFixed(2) + "<br>";
+    total = balance;
+    i++;
+    }
+}
+</script>
+
+<script> window.addEventListener("load", () => {
+    const calculateTax = function (subtotal, taxRate) { 
+            const tax = subtotal * taxRate; 
+            return tax.toFixed(2); }
+
+    var subtotal = prompt("In using this bank account, we do take a fee so that we can keep are high saving intrest. See how much we take by entering a number that you may deposit into your account");
+
+    const taxRate = 0.05;
+    const finalTax = calculateTax(subtotal, taxRate);
+    alert("Remember that this account take " + finalTax +" when withdraw ")
+
+});
+</script>
+
+</html>
