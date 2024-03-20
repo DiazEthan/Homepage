@@ -1,0 +1,34 @@
+<html id="html">
+    
+<head>
+<meta charset="utf-8" />
+<link href="unit_2_project.css" rel="stylesheet" />
+<script src="unit_2_project.js"></script>
+</head>
+
+<div id="div">
+    <p> Hello, welcome to your Net Money calulator, to begin please press the Button to show you how much money you have after paying off all your debt </p>
+    
+    </div>
+
+    <button id ="button">Calulate your Net Money</button>
+
+
+
+<script> 
+
+    var checking = Number(prompt("How much money you have in your checking account?"));
+    var saving = Number(prompt("How much money you have in your saving account?"));
+    var debt = Number(prompt("How much do you own in debt?"));
+
+</script>
+
+<script> document.getElementById("button").addEventListener("click", calulateNetMoney);
+
+    function calulateNetMoney() {
+        const myAccount = new Account(checking, saving, debt);
+        const netMoney = myAccount.getTotal();
+        console.log(netMoney);
+    }
+
+</script>
