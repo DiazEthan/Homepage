@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="ArrayMethods.js"></script>
+<link href="ArrayMethods.css" rel="stylesheet" />
+
+</head>
+<body>
+    <input type="text" id="textInput" placeholder="Enter text here">
+    <button id ="push">Push</button>
+    <button id ="pop">Pop</button>
+    <button id ="shift">Shift</button>
+    <button id ="unshift">Unshift</button>
+    <button id = "map">Map</button>
+    <p id="outputParagraph"></p>
+</body>
+
+
+
+<script>
+    function update() {
+        const arrayInput = document.getElementById('textInput').value;
+        const outputParagraph = document.getElementById('outputParagraph');
+
+        outputParagraph.innerHTML = '';
+
+        const outputText = acc.reduce((acc, value, index) => {
+            return acc + value + (index +1) + "<br>"
+        }, "");
+
+        outputParagraph.innerHTML = outputText;
+
+    }
+</script>
+
+<script> document.getElementById("push").addEventListener("click", push);
+    function push() {
+        const arrayInput = document.getElementById('textInput').value;
+        acc.push(arrayInput);
+        update();
+    }
+</script>
+<script> document.getElementById("pop").addEventListener("click", pop);
+    function pop() {
+        const arrayInput = document.getElementById('textInput').value;
+        acc.pop(arrayInput);
+        update();
+    }
+</script>
+<script> document.getElementById("unshift").addEventListener("click", unshift);
+    function unshift() {
+        const arrayInput = document.getElementById('textInput').value;
+        acc.unshift(arrayInput);
+        update();
+    }
+</script>
+<script> document.getElementById("shift").addEventListener("click", shift);
+    function shift() {
+        const arrayInput = document.getElementById('textInput').value;
+        acc.shift(arrayInput);
+        update();
+    }
+</script>
+
+<script> document.getElementById("map").addEventListener("click", arrMap);
+    function arrMap() {
+        const arrayInput = document.getElementById('textInput').value;
+        acc = acc.map((element) =>{
+            return arrayInput + element
+        });
+        update();
+    }
+</script>
