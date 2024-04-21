@@ -1,0 +1,39 @@
+<html>
+	<body>
+		<script src="algorithms.js"></script>
+
+        <div>
+
+            <p id = breath>
+                <button id = breathfunction>Breath Search</button>
+            <p id = breathText>
+
+            </p>
+            </p>
+
+            <p id = depth>
+                <button id = depthfunction>Depth Search</button>
+            <p id = depthText>
+
+            </p>
+            </p>
+
+        </div>
+
+        <script>
+            document.getElementById("depthfunction").addEventListener("click", function() {
+                depthFirstSearch(tree);
+            });
+            
+            document.getElementById("breathfunction").addEventListener("click", function() {
+                breathFirstSearch(tree);
+            });
+        </script>
+
+
+
+
+
+
+    </body>
+</html>
