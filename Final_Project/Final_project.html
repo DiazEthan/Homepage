@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="Final_project.js"></script>
+<link href="Final_project.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="moves"></div>
+
+
+    <p> <button id ="graphCreator">Create a Graph with your number</button> </p>
+
+</body>
+
+<script>
+
+    var dataPoint = Number(prompt("Pick a number between 3 and 10"));
+    
+    if (dataPoint > 10 ) {
+        alert ("Number is over 9, refresh and try again")
+    }else if (dataPoint < 3 ) {
+        alert ("Number is under 3, refresh and try again")
+    }
+    
+
+</script>
+
+<script> document.getElementById("graphCreator").addEventListener("click", () => {
+
+        var graph = [];
+        var divElement = document.querySelector(".moves");
+
+        for (let i = 0; i < dataPoint; i++) {
+            graph.push(new GraphNode(i));
+        }
+
+        for (let d = 0; d < dataPoint; d++) {
+            let numberOfConnections = prompt("What other nodes would you like to connect Node " + (d + 1) + ". (Please write the numbers separated by spaces)");
+            const nodeNumbers = numberOfConnections.split(" ");
+            let length = nodeNumbers.length;
+            divElement.innerHTML += "Node " + (d + 1) + " is connected to: ";
+
+            for (let n = 0; n < length; n++) {
+                let g = parseInt(nodeNumbers[n], 10) - 1;
+                if (g > -1) {
+                if (g < dataPoint) {
+                    graph[d].connect(graph[g]);
+                    divElement.innerHTML += (g + 1) + " ";
+                } else {
+                    alert("Invalid connection number for Node " + (d + 1));
+                }
+                }else {
+                alert("Invalid connection number for Node " + (d + 1));
+                }
+            }
+            divElement.innerHTML += "<br>";
+        }
+})
+</script>
